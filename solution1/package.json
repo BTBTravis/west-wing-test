@@ -1,0 +1,16 @@
+{
+  "name": "solution1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "solution1.js",
+  "scripts": {
+    "api": "json-server --watch data.json",
+    "start": "http-server ./"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "json-server": "^0.12.1"
+  }
+}
