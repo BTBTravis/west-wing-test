@@ -6,7 +6,6 @@ var blocks = Array.from(document.querySelectorAll('.expando-block'));
  */
 var createExpandoBlock = function (el) {
   var init = function () {
-    el.style.color = "red";
     var body = el.querySelector('.expando-body');
     var height = body.clientHeight;
     var maxHeight = 3.4 * parseFloat(getComputedStyle(body).fontSize);
