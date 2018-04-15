@@ -7,7 +7,7 @@ export default class MODULE {
     this.els = Array.from(document.querySelectorAll('.elements'));
     this.els.map(el => {
       let id = el.getAttribute('data-id');
-      if(!id) return null; // if we don't have an id don't attach click event handler
+      if(!id) return; // if we don't have an id don't attach click event handler
       el.addEventListener('click', () => {
         jquery.ajax({
           url: '/change-status',
