@@ -1,6 +1,6 @@
 (function () {
   var usersEls = $('.userNode').toArray()
-  if (usersEls.length < 1) return null // if we don't have any users on this page exit
+  if (usersEls.length < 1) return // if we don't have any users on this page exit
 
   // map over the userEls and load info on their users from the api
   usersEls.map(function (userEl) {
