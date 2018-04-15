@@ -98,7 +98,7 @@ export default class SetStatus {
 ```
 ## 3. [Task 3](solution3) (Writing from scratch)
 
-
+![Solution 3 Gif](/west-wing-test-js.gif)
 ```
 (function () {
   var blocks = Array.from(document.querySelectorAll('.expando-block'));
@@ -145,7 +145,9 @@ export default class SetStatus {
 ```
 ## 4. [Task 4](solution4/src/App.js) (Writing from scratch with React)
 
++ no need for state library with something this simple 
 
+![Solution 3 Gif](/west-wing-test-react.gif)
 ```
 import React, { Component } from 'react';
 import logo from './logo.svg';
@@ -176,8 +178,6 @@ class ExpandoBlock extends React.Component {
     let bodyEl = this.refs.body;
     let height = bodyEl.clientHeight;
     let maxHeight = 3.4 * parseFloat(getComputedStyle(bodyEl).fontSize);
-    console.log('height: ', height);
-    console.log('maxHeight: ', maxHeight);
     if(height > maxHeight) this.setState({ canExpand: true, closed: true });
   }
 
