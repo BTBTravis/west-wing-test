@@ -143,7 +143,7 @@ export default class SetStatus {
 
 }());
 ```
-4. [Task 4](task4.md) (Writing from scratch with React)
+## 4. [Task 4](solution4/src/App.js) (Writing from scratch with React)
 
 
 ```
