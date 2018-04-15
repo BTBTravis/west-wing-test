@@ -1,6 +1,6 @@
 # Westwing Frontend Coding Test - Solutions 
 
-1. [Task 1](task1.js) (Refactoring)
+## 1. [Task 1](solution1/solution1.js) (Refactoring)
 
 + iife to avoid polluting global scope and allow for exit if we don't any .userNodes
 + /get-users-endpoint replaced with mock json api http://localhost:3000/users/ 
@@ -59,8 +59,43 @@
 
 ```
 
-2. [Task 2](task2.js) (Refactoring to ES6)
+## 2. [Task 2](solution2/solution2.js) (Refactoring to ES6)
 
++ MODULE was swapped for more discriptive class name
+
+```
+var _ = require('lodash');
+var jquery = require('jquery');
+
+export default class SetStatus {
+  const self = this;
+  constructor () => {
+    this.els = Array.from(document.querySelectorAll('.elements'));
+    this.els.map(el => {
+      let id = el.getAttribute('data-id');
+      if(!id) return null; // if we don't have an id don't attach click event handler
+      el.addEventListener('click', () => {
+        jquery.ajax({
+          url: '/change-status',
+          method: 'GET',
+          data: {
+            id: id
+          },
+          dataType: 'json',
+          success: function (data) {
+            if (data.success) self.setElementStatus(data.element.statusText);
+          }
+        });
+      });
+    });
+  };
+
+  setElementStatus = (id, statusText)  => {
+    this.els.map(el => if(el.getAttribute('data-id') == id) jquery(el).find('.status').text(statusText));
+  };
+
+}
+```
 3. [Task 3](task3.md) (Writing from scratch)
 
 4. [Task 4](task4.md) (Writing from scratch with React)
